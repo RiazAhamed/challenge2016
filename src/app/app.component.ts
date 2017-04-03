@@ -3,7 +3,7 @@ import { AppService } from './app.service';
 import { Distributors } from './distributors';
 import { Cities } from './cities';
 // noinspection TypeScriptCheckImport
-import* as _ from 'lodash';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'my-app',
