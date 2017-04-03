@@ -70,8 +70,8 @@ export class AppComponent implements OnInit {
 
     console.log(this.distributorName, this.distributorCity, this.distributorState, this.distributorCountry);
 
-    if ((this.distributorCity === undefined || this.distributorCity === '') && 
-    (this.distributorState  === undefined || this.distributorState  === '') && 
+    if ((this.distributorCity === undefined || this.distributorCity === '') &&
+    (this.distributorState  === undefined || this.distributorState  === '') &&
     (this.distributorCountry === undefined || this.distributorCountry === '')) {
       this.fieldError.error = true;
       this.fieldError.message.noRegionError = 'Atlest enter city or state or country name.';
