@@ -1,6 +1,6 @@
 module.exports = {
     port: process.env.PORT || 3000,
-    "open": false,
+    "open": true,
     "logLevel": "silent",
     "notify" : false,
     server:{
