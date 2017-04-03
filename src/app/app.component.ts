@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   autoCity: any = [];
   autoState: any = [];
   autoCountry: any = [];
+  showIndex: any = '';
   fieldError: any = {
     error: false,
     message: {
@@ -61,16 +62,7 @@ export class AppComponent implements OnInit {
   showDetails(index: number) {
     if (index >= 0) {
       console.log(this.distributors[index].name);
-    }
-  }
-
-  distributorFilter() {
-    if (this.distributorName !== '') {
-        // this.filteredList = this.distributors.distributorFilter(function(el: any){
-        //     return el.toLowerCase().indexOf(this.distributorName.toLowerCase()) > -1;
-        // }.bind(this));
-    } else {
-        this.filteredList = [];
+      this.showIndex = index;
     }
   }
 

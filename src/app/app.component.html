@@ -51,6 +51,27 @@
                 <button (click)="searchRights()" class="btn btn-success col-xs-12 col-sm-12 col-md-3 col-lg-3"><i class="glyphicon glyphicon-search"></i> Search Rights</button>
             </div>
         </div>
+
+        <div>
+            <div *ngFor="let distributor of distributors; let i = index">
+                <div *ngIf="(showIndex === i)">
+                    <h4>Distributer Details</h4>
+                    <h4>{{distributor.name}}</h4>
+                    <p>Only has rights to distribute in</p>
+                    <ul>
+                        <li *ngFor="let includes of distributor.include">
+                            {{includes}}
+                        </li>
+                    </ul>
+                    <p>and this this distributor have no righs to distribute in this places</p>
+                    <ul>
+                        <li *ngFor="let excludes of distributor.exclude">
+                            {{excludes}}
+                        </li>
+                    </ul>
+                </div>    
+            </div>
+        </div>
     </section>
     <aside class="bg-fff col-xs-12 col-sm-12 col-md-3 col-lg-3">
         <h4>Available Distributors</h4>

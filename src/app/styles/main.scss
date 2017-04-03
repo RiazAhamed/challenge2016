@@ -61,7 +61,8 @@ body {
     section {
         border: 1px solid #f1f1f1;
         padding: 25px;
-        height: 100%;
+        min-height: 100%;
+        margin-bottom: 50px; 
         form, .form {
             padding: 25px;
             label {
