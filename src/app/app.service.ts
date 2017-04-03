@@ -6,6 +6,7 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 
 import { Distributors } from './distributors';
+import { Cities } from './cities';
 
 @Injectable()
 export class AppService {
@@ -16,6 +17,12 @@ export class AppService {
     getDistributors(): Observable<Distributors> {
         return this._http.get('./app/distributors.json')
             .map((response: Response) => <Distributors> response.json())
+            .catch(this.handleError);
+    }
+
+    getCities(): Observable<Cities> {
+        return this._http.get('./app/cities.json')
+            .map((response: Response) => <Cities> response.json())
             .catch(this.handleError);
     }
 

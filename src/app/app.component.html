@@ -14,17 +14,47 @@
 </nav>
 <br>
 <br>
+<br>
+<br>
 
-<div class="workarea container-fluid col-md-offset-1 col-lg-offset-1 col-xs-12 col-sm-12 col-md-10 col-lg-10">
+<div class="workarea container-fluid col-md-offset-2 col-lg-offset-2 col-xs-12 col-sm-12 col-md-10 col-lg-10">
+    <section class="bg-fff col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-pull-1 col-lg-pull-1">
+        <h4>Search destribution rights</h4>
+        <div class="form">
+            <label for="dName" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h5>Distributor name <span class="co-red"><sup>*</sup></span></h5>
+                <input [(ngModel)]="distributorName" (keyup)="distributorFilter()" required type="text" id="dName" placeholder="Distributor name" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            </label>
+            <span class="co-red" *ngIf="(fieldError.error)">
+                <div *ngIf="(fieldError.message.invalidDName != '')"><strong>Nope...</strong> {{fieldError.message.invalidDName}}</div>
+            </span>
+            <label for="dCity" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h5>City</h5>
+                <input [(ngModel)]="distributorCity" type="text" id="dCity" placeholder="City" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            </label>
+            <label for="dState" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h5>State</h5>
+                <input [(ngModel)]="distributorState" type="text" id="dState" placeholder="State" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            </label>
+            <label for="dCountry" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h5>Country</h5>
+                <input [(ngModel)]="distributorCountry" type="text" id="dCountry" placeholder="Country" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            </label>
+            <div class="co-red" *ngIf="(fieldError.error)">
+                <div *ngIf="(fieldError.message.noRegionError != '')"><strong>Nope...</strong> {{fieldError.message.noRegionError}}</div>
+            </div>
+            <div class="row-fluid col-lg-12">
+                <br>
+                <button (click)="searchRights()" class="btn btn-success col-xs-12 col-sm-12 col-md-3 col-lg-3"><i class="glyphicon glyphicon-search"></i> Search Rights</button>
+            </div>
+        </div>
+    </section>
     <aside class="bg-fff col-xs-12 col-sm-12 col-md-3 col-lg-3">
         <h4>Available Distributors</h4>
         <ol class="distributers-cotainer">
             <li *ngFor="let distributor of distributors; let i = index">
-                <div (click)="showDetails(i);">{{distributor.name}}</div>
+                <a (click)="showDetails(i);" title="View {{distributor.name}} details">{{distributor.name}}</a>
             </li>
         </ol>
     </aside>
-    <section class="bg-fff col-xs-12 col-sm-12 col-md-9 col-lg-9">
-        <h4>Search destribution rights</h4>
-    </section>
 </div>
