@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from './app.service';
 import { Distributors } from './distributors';
 import { Cities } from './cities';
+// noinspection TypeScriptCheckImport
 import* as _ from 'lodash';
 
 @Component({
