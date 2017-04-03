@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from './app.service';
 import { Distributors } from './distributors';
 import { Cities } from './cities';
+import* as _ from 'lodash';
 
 @Component({
   selector: 'my-app',
@@ -11,6 +12,10 @@ export class AppComponent implements OnInit {
   distributors: Distributors;
   availableCities: Cities;
   errorMessage: string;
+  distributorsName: any = [];
+  autoCity: any = [];
+  autoState: any = [];
+  autoCountry: any = [];
   fieldError: any = {
     error: false,
     message: {
@@ -34,17 +39,23 @@ export class AppComponent implements OnInit {
       .subscribe(
           distributors => this.distributors = distributors,
           error => this.errorMessage = <any>error,
-          () => this.handleingRepos());
+          () => this.handleingDiestibuters());
 
     this._appService.getCities()
       .subscribe(
           availableCities => this.availableCities = availableCities,
           error => this.errorMessage = <any>error,
-          () => this.handleingRepos());
+          () => this.handleingCities());
   }
 
-  handleingRepos() {
-    console.log(this.distributors);
+  handleingCities() {
+    this.autoCity = _.map(this.availableCities, (e: any) => e['City Name']);
+    this.autoState = _.map(this.availableCities, (e: any) => e['Province Name']);
+    this.autoCountry = _.map(this.availableCities, (e: any) => e['Country Name']);
+  }
+
+  handleingDiestibuters() {
+    this.distributorsName = _.map(this.distributors, (e: any) => e.name);
   }
 
   showDetails(index: number) {
@@ -84,7 +95,7 @@ export class AppComponent implements OnInit {
       for (let i = 0; i < this.distributors.length; i++) {
         let element: any = this.distributors[i];
         if (element.name === this.distributorName) {
-          console.log(element);
+          break;
         } else {
           if ((i + 1) === this.distributors.length) {
             this.fieldError.error = true;

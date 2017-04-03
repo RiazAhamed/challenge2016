@@ -19,11 +19,14 @@
 
 <div class="workarea container-fluid col-md-offset-2 col-lg-offset-2 col-xs-12 col-sm-12 col-md-10 col-lg-10">
     <section class="bg-fff col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-pull-1 col-lg-pull-1">
-        <h4>Search destribution rights</h4>
+        <h3>Search destribution rights</h3>
         <div class="form">
             <label for="dName" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <h5>Distributor name <span class="co-red"><sup>*</sup></span></h5>
-                <input [(ngModel)]="distributorName" (keyup)="distributorFilter()" required type="text" id="dName" placeholder="Distributor name" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                <div ng2-auto-complete [source]="distributorsName" (valueChanged)="distributorName = $event">
+                    <input [(ngModel)]="distributorName" required type="text" id="dName" placeholder="Distributor name" class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    {{distributorName}}
+                </div>
             </label>
             <span class="co-red" *ngIf="(fieldError.error)">
                 <div *ngIf="(fieldError.message.invalidDName != '')"><strong>Nope...</strong> {{fieldError.message.invalidDName}}</div>
