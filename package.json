@@ -27,7 +27,7 @@
     "lint": "tslint ./src/**/*.ts -t verbose"
   },
   "keywords": [],
-  "author": "",
+  "author": "Riaz Ahamed (@stuffincode)",
   "license": "MIT",
   "dependencies": {
     "@angular/common": "~4.0.0",
@@ -43,7 +43,8 @@
     "core-js": "^2.4.1",
     "rxjs": "5.0.1",
     "systemjs": "0.19.40",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.4",
+    "typescript": "~2.1.0"
   },
   "devDependencies": {
     "@types/jasmine": "2.5.36",
