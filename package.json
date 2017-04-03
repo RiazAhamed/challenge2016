@@ -63,8 +63,7 @@
     "protractor": "~4.0.14",
     "rimraf": "^2.5.4",
     "sass": "^0.5.0",
-    "tslint": "^3.15.1",
-    "typescript": "~2.1.0"
+    "tslint": "^3.15.1"
   },
   "repository": {}
 }
