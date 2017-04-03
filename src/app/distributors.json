@@ -1,0 +1,20 @@
+[
+    {
+        "name": "DISTRIBUTOR1",
+        "parnet": [],
+        "include": ["INDIA", "UNITEDSTATES"],
+        "exclude": ["KARNATAKA-INDIA", "CHENNAI-TAMILNADU-INDIA"]
+    },
+    {
+        "name": "DISTRIBUTOR2",
+        "parnet": ["DISTRIBUTOR1"],
+        "include": ["INDIA"],
+        "exclude": ["TAMILNADU-INDIA"]
+    },
+    {
+        "name": "DISTRIBUTOR3",
+        "parnet": ["DISTRIBUTOR2", "DISTRIBUTOR1"],
+        "include": ["HUBLI-KARNATAKA-INDIA"],
+        "exclude": []
+    }
+]

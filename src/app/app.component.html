@@ -1,0 +1,30 @@
+<!--headder-->
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="/">
+        <!--<img src="app/assert/gitchamp-plain.svg" alt="">-->
+        <span>RealImage Challenge 2016</span>
+        </a>
+        <a class="navbar-brand" href="https://www.twitter.com/stuffincode" target="_blanck">
+        <span>by @Stuffincode</span>
+        </a>
+    </div>
+    </div>
+</nav>
+<br>
+<br>
+
+<div class="workarea container-fluid col-md-offset-1 col-lg-offset-1 col-xs-12 col-sm-12 col-md-10 col-lg-10">
+    <aside class="bg-fff col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <h4>Available Distributors</h4>
+        <ol class="distributers-cotainer">
+            <li *ngFor="let distributor of distributors; let i = index">
+                <div (click)="showDetails(i);">{{distributor.name}}</div>
+            </li>
+        </ol>
+    </aside>
+    <section class="bg-fff col-xs-12 col-sm-12 col-md-9 col-lg-9">
+        <h4>Search destribution rights</h4>
+    </section>
+</div>
